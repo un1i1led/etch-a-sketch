@@ -1,9 +1,12 @@
-const container = document.querySelector('.grid');
+const grid = document.querySelector('.grid');
 
 for (let i = 0; i < 256; i++){
     const gridDiv = document.createElement('div');
-    gridDiv.classList.add('gridDiv');
-    container.appendChild(gridDiv);
-}
+    gridDiv.className = 'gridDiv';
+    grid.appendChild(gridDiv);
 
+    gridDiv.addEventListener('mouseenter', () => {
+        gridDiv.style.backgroundColor = 'black';
+    });
+};
 

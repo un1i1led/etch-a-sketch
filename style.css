@@ -1,6 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
+    background-color: grey;
 }
 
 .container {
@@ -19,8 +20,7 @@ body {
 .gridDiv {
     height: 15px;
     width: 15px;
-    background-color: green;
+    background-color: white;
     margin: 0px;;
     padding: 0px;
-    
 }
