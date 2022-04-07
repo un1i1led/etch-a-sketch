@@ -8,7 +8,6 @@ const large = document.querySelector('#large');
 let smallChoice = () => {
     for (let i = 0; i < 256; i++){
         const gridDiv = document.createElement('div');
-        gridDiv.id = i;
         gridDiv.className = 'gridDiv';
         grid.appendChild(gridDiv);
         
@@ -23,20 +22,23 @@ let smallChoice = () => {
 
         small.addEventListener('click', () => {
             gridDiv.style.backgroundColor = 'white';
+            grid.appendChild(gridDiv);
         })
 
         medium.addEventListener('click', () => {
-            gridDiv.style.backgroundColor = 'white';
+            gridDiv.remove();
         });
 
-        
+        large.addEventListener('click', () => {
+            gridDiv.remove();
+        });
+
     };    
 };
 
 let mediumChoice = () => {
-    for (let i = 256; i < 1024; i++){
+    for (let i = 0; i < 1024; i++){
         const gridDiv = document.createElement('div');
-        gridDiv.id = i;
         gridDiv.className = 'gridDiv';
         grid.appendChild(gridDiv);
 
@@ -51,12 +53,16 @@ let mediumChoice = () => {
         small.addEventListener('click', () => {
             gridDiv.remove();
         });
+
+        large.addEventListener('click', () => {
+            gridDiv.remove();
+        });
         
     };
 };
 
 let largeChoice = () => {
-    for (let i = 1024; i < 4096; i++){
+    for (let i = 0; i < 4096; i++){
         const gridDiv = document.createElement('div');
         gridDiv.id = i;
         gridDiv.className = 'gridDiv';
