@@ -39,7 +39,7 @@ let smallChoice = () => {
 let mediumChoice = () => {
     for (let i = 0; i < 1024; i++){
         const gridDiv = document.createElement('div');
-        gridDiv.className = 'gridDiv';
+        gridDiv.className = 'midDiv';
         grid.appendChild(gridDiv);
 
         gridDiv.addEventListener('mouseenter', () => {
@@ -65,7 +65,7 @@ let largeChoice = () => {
     for (let i = 0; i < 4096; i++){
         const gridDiv = document.createElement('div');
         gridDiv.id = i;
-        gridDiv.className = 'gridDiv';
+        gridDiv.className = 'largeDiv';
         grid.appendChild(gridDiv);
 
         gridDiv.addEventListener('mouseenter', () => gridDiv.style.backgroundColor = 'black');
