@@ -4,6 +4,28 @@ const clear = document.querySelector('#clear');
 const small = document.querySelector('#small');
 const medium = document.querySelector('#medium');
 const large = document.querySelector('#large');
+const random = document.querySelector('#random');
+
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+
+let yes = 0;
+
+let randomColor = () => {
+    if (yes == 1) {
+        yes = 0;
+    } else {
+        yes = 1;
+    }
+
+    return yes;
+};
+
+random.addEventListener('click', randomColor);
+
+let color = random_rgba();
 
 let smallChoice = () => {
     for (let i = 0; i < 256; i++){
@@ -11,9 +33,12 @@ let smallChoice = () => {
         gridDiv.className = 'gridDiv';
         grid.appendChild(gridDiv);
         
-    
         gridDiv.addEventListener('mouseenter', () => {
-            gridDiv.style.backgroundColor = 'black';
+            if (yes == 1){
+                gridDiv.style.backgroundColor = random_rgba();
+            } else {
+                gridDiv.style.backgroundColor = 'black';
+            }
         });
     
         clear.addEventListener('click', () => {
@@ -43,7 +68,11 @@ let mediumChoice = () => {
         grid.appendChild(gridDiv);
 
         gridDiv.addEventListener('mouseenter', () => {
-            gridDiv.style.backgroundColor = 'black';
+            if (yes == 1){
+                gridDiv.style.backgroundColor = random_rgba();
+            } else {
+                gridDiv.style.backgroundColor = 'black';
+            }
         });
 
         clear.addEventListener('click', () => {
@@ -68,7 +97,13 @@ let largeChoice = () => {
         gridDiv.className = 'largeDiv';
         grid.appendChild(gridDiv);
 
-        gridDiv.addEventListener('mouseenter', () => gridDiv.style.backgroundColor = 'black');
+        gridDiv.addEventListener('mouseenter', () => {
+            if (yes == 1){
+                gridDiv.style.backgroundColor = random_rgba();
+            } else {
+                gridDiv.style.backgroundColor = 'black';
+            }
+        });
 
         clear.addEventListener('click', () => {
             gridDiv.style.backgroundColor = 'white';
@@ -83,8 +118,6 @@ let largeChoice = () => {
         });
     }
 };
-
-
 
 smallChoice();
 
