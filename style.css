@@ -1,7 +1,7 @@
 body {
     margin: 0px;
     padding: 0px;
-    height: 700px;
+    height: 690px;
 }
 
 .container {
@@ -66,4 +66,17 @@ body {
     margin: 0px;
     padding: 0px;
 }
+
+a {
+    display: flex;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: line-through;
+}
+
+
 
